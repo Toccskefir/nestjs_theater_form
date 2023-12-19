@@ -19,7 +19,7 @@ export class AppController {
   @Get()
   @Render('index')
   async index() {
-    const [data] = await conn.execute('SELECT id, title, percentage, code FROM cupons');
+    const [data] = await conn.execute('SELECT id, title, percentage, code FROM cupons ORDER BY title');
     return { title: 'Főoldal', index: data };
   }
 
