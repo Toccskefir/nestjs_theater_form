@@ -1,4 +1,4 @@
-export class NewAnimalDto {
+export class NewCuponDto {
     title: string;
     percentage: number;
     code: string;
