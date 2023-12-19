@@ -39,8 +39,8 @@ export class AppController {
       errors.push('Adja meg az előadás címét!');
     }
 
-    if (newCupon.percentage < 1 || isNaN(newCupon.percentage)) {
-      errors.push('A kedvezmény értéke legalább 1% kell legyen!');
+    if (newCupon.percentage < 1 || newCupon.percentage > 99 || isNaN(newCupon.percentage)) {
+      errors.push('A kedvezmény értéke 1-99% között kell legyen!');
     }
 
     if (newCupon.code.trim() === '') {
