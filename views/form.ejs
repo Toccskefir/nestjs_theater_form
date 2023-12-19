@@ -27,6 +27,10 @@
             <input type="text" name="code">
         </label><br>
 
+        <% errors.forEach(item => { %>
+            <p><%= item %></p>
+        <% }); %>
+
         <input type="submit" value="Hozzáadás">
         <a href="/">Mégse</a>
     </form>
