@@ -18,7 +18,13 @@
             <th>Kuponkód</th>
         </thead>
         <tbody>
-
+            <% index.forEach( index => { %>
+                <tr>
+                    <td><%= index.title %></td>
+                    <td><%= index.percentage %></td>
+                    <td><%= index.code %></td>
+                </tr>
+            <% }); %>
         </tbody>
     </table>
 

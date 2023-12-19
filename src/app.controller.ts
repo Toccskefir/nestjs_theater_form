@@ -18,8 +18,9 @@ export class AppController {
 
   @Get()
   @Render('index')
-  index() {
-    return { title: 'Főoldal' };
+  async index() {
+    const [data] = await conn.execute('SELECT id, title, percentage, code FROM cupons');
+    return { title: 'Főoldal', index: data };
   }
 
   @Get('/form')
