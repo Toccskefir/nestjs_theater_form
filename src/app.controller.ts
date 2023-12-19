@@ -23,14 +23,14 @@ export class AppController {
     return { title: 'Főoldal', index: data };
   }
 
-  @Get('/form')
-  @Render('form')
+  @Get('/newCoupon')
+  @Render('newCoupon')
   form() {
     return { title: 'Kupon hozzáadása', errors: [] };
   }
 
-  @Post('/form')
-  @Render('form')
+  @Post('/newCoupon')
+  @Render('newCoupon')
   async formPost(@Body() newCupon: NewCuponDto, @Res() res: Response) {
     const errors: string[] = [];
     const codeRegex = /^[A-Z]{4}-[0-9]{6}$/;
@@ -50,7 +50,7 @@ export class AppController {
     }
 
     if (errors.length > 0) {
-      res.render('form', { title: 'Kupon hozzáadása', errors });
+      res.render('newCoupon', { title: 'Kupon hozzáadása', errors });
     } else {
       const title: string = newCupon.title;
       const percentage: number = newCupon.percentage;
