@@ -19,6 +19,12 @@ export class AppController {
   @Get()
   @Render('index')
   index() {
-    return { message: 'Welcome to the homepage' };
+    return { title: 'Főoldal' };
+  }
+
+  @Get('/form')
+  @Render('form')
+  form() {
+    return { title: 'Kupon hozzáadása' };
   }
 }
